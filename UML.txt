@@ -1,21 +1,36 @@
 @startuml
+
 class Telecommande {
 + Telecommande()
-+ ajouterLampe(lampe : Lampe)
-+ activerLampe(indiceLampe : int)
-+ desactiverLampe(indiceLampe : int)
++ ajouterObjet(objet : ElectronicObject)
++ activerObjet(indiceObjet : int)
++ desactiverObjet(indiceObjet : int)
 + activerTout()
 + toString() : String
++ getObjets() : ElectronicObject[]
 }
+
+interface ElectronicObject {
++ allumer()
++ eteindre()
+}
+
 class Lampe {
 - nom : String
 - allume : boolean
-+ Lampe(nom : String)
-+ allumer()
-+ eteindre()
++ Lampe(paramNom : String)
 + toString() : String
++ getNom() : String
 }
 
-'''relations
-Telecommande --> "*" Lampe : -lampes
+class Hifi {
+- son : int
++ toString() : String
++ getSound() : int
+}
+
+Telecommande --> "*" ElectronicObject : -objet
+ElectronicObject <|.. Lampe
+ElectronicObject <|.. Hifi
+
 @enduml

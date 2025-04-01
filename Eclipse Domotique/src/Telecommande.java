@@ -6,8 +6,8 @@ public class Telecommande {
         objets = new ElectronicObject[100];
     }
 
-    public void activerObjet(int indiceLampe){
-        objets[indiceLampe].allumer();
+    public void activerObjet(int indiceObjet){
+        objets[indiceObjet].allumer();
     }
 
     public void ajouterObjet(ElectronicObject objet){
@@ -22,8 +22,8 @@ public class Telecommande {
         }
     }
 
-    public void desactiverObjet(int indiceLampe){
-        objets[indiceLampe].eteindre();
+    public void desactiverObjet(int indiceObjet){
+        objets[indiceObjet].eteindre();
     }
 
     public void activerTout(){
