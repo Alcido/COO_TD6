@@ -5,6 +5,7 @@ public class Telecommande {
     public Telecommande(){
         lampes = new Lampe[100];
     }
+
     public void activerLampe(int indiceLampe){
         lampes[indiceLampe].allumer();
     }
