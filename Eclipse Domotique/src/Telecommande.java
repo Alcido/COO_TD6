@@ -5,20 +5,30 @@ public class Telecommande {
     public Telecommande(){
         lampes = new Lampe[100];
     }
-    public void activerLampe(){
-        throw new Error("Code à faire");
+    public void activerLampe(int indiceLampe){
+        lampes[indiceLampe].allumer();
     }
 
-    public void ajouterLampe(){
-        throw new Error("Code à faire");
+    public void ajouterLampe(Lampe lampe){
+        try {
+            int i = 0;
+            while(lampes[i] != null){
+                i++;
+            }
+            lampes[i] = lampe;
+        }catch(ArrayIndexOutOfBoundsException e){
+            System.out.println("Vous avez dépassé la nombre de lampe maximum !");
+        }
     }
 
-    public void desactiverLampe(){
-        throw new Error("Code à faire");
+    public void desactiverLampe(int indiceLampe){
+        lampes[indiceLampe].eteindre();
     }
 
     public void activerTout(){
-        throw new Error("Code à faire");
+        for(int i = 0; i < lampes.length; i++){
+            lampes[i].allumer();
+        }
     }
 
     public String toString() {
