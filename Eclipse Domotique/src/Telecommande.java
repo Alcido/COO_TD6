@@ -1,42 +1,52 @@
 public class Telecommande {
 
-    private Lampe[] lampes;
+    private ElectronicObject[] objets;
 
     public Telecommande(){
-        lampes = new Lampe[100];
+        objets = new ElectronicObject[100];
     }
 
-    public void activerLampe(int indiceLampe){
-        lampes[indiceLampe].allumer();
+    public void activerObjet(int indiceLampe){
+        objets[indiceLampe].allumer();
     }
 
-    public void ajouterLampe(Lampe lampe){
+    public void ajouterObjet(ElectronicObject objet){
         try {
             int i = 0;
-            while(lampes[i] != null){
+            while(objets[i] != null){
                 i++;
             }
-            lampes[i] = lampe;
+            objets[i] = objet;
         }catch(ArrayIndexOutOfBoundsException e){
             System.out.println("Vous avez dépassé la nombre de lampe maximum !");
         }
     }
 
-    public void desactiverLampe(int indiceLampe){
-        lampes[indiceLampe].eteindre();
+    public void desactiverObjet(int indiceLampe){
+        objets[indiceLampe].eteindre();
     }
 
     public void activerTout(){
-        for(int i = 0; i < lampes.length; i++){
-            lampes[i].allumer();
+        for(int i = 0; i < objets.length; i++){
+            objets[i].allumer();
         }
     }
 
-    public Lampe[] getLampes(){
-        return lampes;
+    public ElectronicObject[] getObjets(){
+        return objets;
     }
 
     public String toString() {
-        throw new Error("Code à faire");
+        StringBuilder s = new StringBuilder();
+        int i = 0;
+        try {
+            while (objets[i] != null) {
+                s.append(objets[i].toString());
+                i++;
+            }
+        } catch (ArrayIndexOutOfBoundsException e) {
+            //
+        }
+        return s.toString();
     }
 }
