@@ -63,4 +63,9 @@ public class Lampe {
 	public boolean isAllume() {
 		return allume;
 	}
+
+	public String getNom() {
+		return nom;
+	}
+
 }
