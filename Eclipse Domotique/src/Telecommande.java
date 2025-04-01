@@ -32,6 +32,10 @@ public class Telecommande {
         }
     }
 
+    public Lampe[] getLampes(){
+        return lampes;
+    }
+
     public String toString() {
         throw new Error("Code à faire");
     }
