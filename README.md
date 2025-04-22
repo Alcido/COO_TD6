@@ -1,2 +1,0 @@
-# COO_TD6
-TD6 de COO
