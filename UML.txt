@@ -27,6 +27,8 @@ class Hifi {
 - son : int
 + toString() : String
 + getSound() : int
++ allumer()
++ eteindre()
 }
 
 Telecommande --> "*" ElectronicObject : -objet
